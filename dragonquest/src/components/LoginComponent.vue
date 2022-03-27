@@ -13,9 +13,9 @@
     </form>
     <div class="signBtn btn">Sign in now</div>
 
-    <div class="goodNotify">Sucess login</div>
+    <div class="goodNotify">Success login.</div>
     <div class="badNotify">
-      Incorrect e-mail or password
+      Incorrect e-mail or password.
     </div>
 
   </div>

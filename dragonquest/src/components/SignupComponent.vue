@@ -21,9 +21,9 @@
 
     <div class="signBtn btn">Sign up now</div>
 
-        <div class="goodNotify">Sucess sign up</div>
+        <div class="goodNotify">Account created.</div>
     <div class="badNotify">
-      Something went wrong
+      Something went wrong.
     </div>
   </div>
 </template>
