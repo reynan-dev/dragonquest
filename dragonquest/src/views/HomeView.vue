@@ -14,7 +14,7 @@
 
         <div class="signup">
             <div class="signTitle">Sign up now.</div>
-            <div class="signBtn btn">Sign up with your email</div>
+            <router-link to="/signup"><div class="signBtn btn">Sign up with your email</div></router-link>
             <div class="signTxt">When you sign up, you agree ours <a href="#">Service Terms</a> and <a href="#">Privacy Policy</a>, included the <a href="#">Use of Cookies</a>.</div>
         </div>
 
@@ -27,7 +27,7 @@
 
         <div class="signin">
             <div class="signTitle">Have an account?</div>
-            <div class="signBtn btn" router-link :to="'/login'">Sign in now</div>
+            <router-link to="/login"><div class="signBtn btn">Sign in now</div></router-link>
         </div>
     </section>
 
@@ -55,6 +55,11 @@ export default {
 </script>
 
 <style scoped>
+
+
+a {
+  text-decoration: none;
+}
 
 .home {
     position: relative;

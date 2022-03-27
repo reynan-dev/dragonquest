@@ -10,7 +10,7 @@
   --font: "Lato", sans-serif;
   --colorbg: #343d46;
   --colorboder: #a7adba;
-  --colorhoverbtn: #89d6fb;
+  --colorhoverbtn: #44bef7;
   --colorprincipal: #02a9f7;
   --colortext: #f7f9f9;
 }
@@ -21,6 +21,10 @@ html {
   background-color: var(--colorbg);
   padding: 0px;
   margin: 0px;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
@@ -48,6 +52,7 @@ body {
   font-size: 20;
   font-weight: 600;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -61,8 +66,9 @@ body {
   font-size: medium;
   font-weight: 400;
   border-radius: 8px;
-  padding: 5px 10px;
+  padding: 15px 20px;
   background-color: var(--colorbg);
+  width: 100%;
 }
 
 .forms::placeholder {
