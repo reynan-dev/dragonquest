@@ -7,7 +7,7 @@
 
 <section class="home">
         <div class="logotype">
-            <i class="fa-solid fa-dragon"></i> <span class="logo">DragonQuest</span>
+            <font-awesome-icon icon="fa-solid fa-dragon" /> <span class="logo">DragonQuest</span>
         </div>
 
         <div class="title">Livin your game</div>
@@ -27,7 +27,7 @@
 
         <div class="signin">
             <div class="signTitle">Have an account?</div>
-            <div class="signBtn btn">Sign in now</div>
+            <div class="signBtn btn" router-link :to="'/login'">Sign in now</div>
         </div>
     </section>
 

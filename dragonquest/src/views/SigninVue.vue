@@ -1,3 +1,31 @@
+<template>
+    <section class="home">
+        <div class="logotype">
+            <font-awesome-icon icon="fa-solid fa-dragon" /> <span class="logo">DragonQuest</span>
+        </div>
+
+
+        <div class="signup">
+            <div class="signTitle">Login at Social Network</div>
+
+            <div class="signInput"><input type="text" class="forms"></div>
+
+            <div class="signTxt">Forgot your password? <a href="#">Click here to recover</a>.</div>
+
+            <div class="signBtn btn">Sign up with your email</div>
+        </div>
+
+    </section>
+
+    <section class="bgImg">
+    </section>
+</template>
+
+<script>
+
+</script>
+
+<style scoped>
 .home {
     position: relative;
     width: 40%;
@@ -7,7 +35,7 @@
 .bgImg {
     position: relative;
     min-width: 60%;
-    background-image: url(proty/img/greet-the-final-battle-alone-illustration.jpg);
+    background-image: url(../assets/greet-the-final-battle-alone-illustration.jpg);
     background-position: 250px;
     background-size: cover;
     background-attachment: fixed;
@@ -58,3 +86,4 @@
     color: var(--colorprincipal);
     text-decoration: none;
 }
+</style>
