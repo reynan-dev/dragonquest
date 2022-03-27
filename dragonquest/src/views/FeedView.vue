@@ -1,21 +1,21 @@
 <template>
   <div class="feedBody">
     
-    <SideComponent />
+    <SidebarComponent :photo="'http://data.pixiz.com/output/user/frame/preview/api/big/5/2/9/3/2633925_7c673.jpg'" :name="'Reynan'" :username="'thereynan'"/>
 
     <div class="feedMain"></div>
   </div>
 </template>
 
 <script>
-import SideComponent from "@/components/SideComponent.vue";
+import SidebarComponent from '@/components/SidebarComponent.vue'
 
 export default {
-  name: "SideComponent",
+  name: 'FeedView',
   components: {
-    SideComponent,
-  },
-};
+    SidebarComponent
+  }
+}
 </script>
 
 <style scoped>

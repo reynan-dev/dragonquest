@@ -7,8 +7,8 @@
         <div class="imgProfile">
           <div class="photoDivProfile">
             <img
-              src="../assets/mago.png"
-              alt="Profile - Name"
+              :src="photo"
+              :alt="'Profile - ' + name"
               class="photoProfile"
             />
           </div>
@@ -18,10 +18,10 @@
         </div>
         <div class="dataProfile">
           <div class="nameDivProfile">
-            <span class="nameProfile">Name</span>
+            <span class="nameProfile">{{name}}</span>
           </div>
           <div class="usernameDivProfile">
-            <span class="usernameProfile">@username</span>
+            <span class="usernameProfile">@{{username}}</span>
           </div>
         </div>
       </div>
@@ -72,7 +72,12 @@
 
 <script>
 export default {
-  name: "SideComponent",
+  name: "SidebarComponent",
+    props: {
+    name: String,
+    username: String,
+    photo: String,
+  },  
 };
 </script>
 
@@ -109,6 +114,8 @@ export default {
   flex-wrap: wrap;
   align-content: center;
   position: relative;
+  text-align: center;
+  justify-content: center;
 }
 
 .sidebar .profile .imgProfile .photoDivProfile {
@@ -117,18 +124,19 @@ export default {
 }
 
 .sidebar .profile .imgProfile .photoDivProfile img {
-  width: 100%;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
   position: relative;
-}
-
-.sidebar .profile .imgProfile .editDivProfile {
-  width: 100%;
+  border: 1px solid #a7adba;
+  object-position: center;
   position: relative;
-}
+}  
 
 .sidebar .profile .imgProfile .editDivProfile .editProfile {
   position: relative;
+  text-align: center;
 }
 
 .sidebar .profile .dataProfile {
