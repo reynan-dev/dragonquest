@@ -11,7 +11,7 @@
         Forgot your password? <a href="#">Click here to recover</a>.
       </div>
     </form>
-    <div class="signBtn btn">Sign in now</div>
+    <router-link to="/feed"><div class="signBtn btn">Sign in now</div></router-link>
 
     <div class="goodNotify">Success login.</div>
     <div class="badNotify">

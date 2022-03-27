@@ -7,7 +7,7 @@
 
 <section class="home">
         <div class="logotype">
-            <font-awesome-icon icon="fa-solid fa-dragon" /> <span class="logo">DragonQuest</span>
+            <i class="fa-solid fa-dragon"></i> <span class="logo">DragonQuest</span>
         </div>
 
         <div class="title">Livin your game</div>
