@@ -64,7 +64,7 @@ const SignupComponent = {
 		async requestAccount() {
 			if (this.verifEmail() == true) {
 				const promise = await fetch(
-					"https://snapi-codebook.osc-fr1.scalingo.io/register",
+					"https://dragonquest.osc-fr1.scalingo.io/register",
 					{
 						method: "POST",
 						body: JSON.stringify(this.user),

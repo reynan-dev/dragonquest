@@ -19,9 +19,18 @@
 </template>
 
 <script>
-export default {
-	name: "LoginComponent",
+const LoginComponent = {
+	data() {
+		return {
+			user: {
+				email: "",
+				password: "",
+			},
+		};
+	},
 };
+
+export default LoginComponent;
 </script>
 
 <style>
