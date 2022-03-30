@@ -1,4 +1,5 @@
 <template>
+	<button @click="test"></button>
 	<div class="loginForms">
 		<form action="">
 			<div class="input">

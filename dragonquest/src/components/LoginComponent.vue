@@ -2,16 +2,27 @@
 	<div class="loginForms">
 		<form action="">
 			<div class="input">
-				<input type="text" class="forms" placeholder="Email" />
+				<input
+					type="text"
+					v-model="this.user.email"
+					class="forms"
+					placeholder="Email"
+				/>
 			</div>
 			<div class="input">
-				<input type="text" class="forms" placeholder="Password" />
+				<input
+					type="password"
+					v-model="this.user.password"
+					class="forms"
+					placeholder="Password"
+				/>
 			</div>
 			<div class="signTxt">
-				Forgot your password? <a href="#">Click here to recover</a>.
+				Forgot your password?{{ $store.state.token }}
+				<a href="#">Click here to recover</a>.
 			</div>
 		</form>
-		<div class="signBtn btn">Sign in now</div>
+		<div class="signBtn btn" @click="connexion">Sign in now</div>
 
 		<div class="goodNotify">Success login.</div>
 		<div class="badNotify">Incorrect e-mail or password.</div>
@@ -19,6 +30,7 @@
 </template>
 
 <script>
+//import { mapState } from "vuex";
 const LoginComponent = {
 	data() {
 		return {
@@ -26,7 +38,30 @@ const LoginComponent = {
 				email: "",
 				password: "",
 			},
+			token: "",
 		};
+	},
+	methods: {
+		async connexion() {
+			const promise = await fetch(
+				"https://dragonquest.osc-fr1.scalingo.io/login",
+				{
+					method: "POST",
+					body: JSON.stringify(this.user),
+					headers: {
+						"Content-Type": "application/json",
+					},
+				}
+			);
+			console.log(promise);
+			let response = await promise.json();
+			console.log(response);
+			this.token = response.token;
+			this.envoieData();
+		},
+		envoieData() {
+			this.$store.dispatch("envoieDatae", this.token);
+		},
 	},
 };
 
