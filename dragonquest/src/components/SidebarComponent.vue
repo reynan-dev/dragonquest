@@ -1,16 +1,13 @@
 <template>
-      <div class="sidebar">
+  <div class="sidebar">
+    <div class="fixed">
       <div class="logo">
         <i class="fa-solid fa-dragon"></i> <span class="logo">DragonQuest</span>
       </div>
       <div class="profile">
         <div class="imgProfile">
           <div class="photoDivProfile">
-            <img
-              :src="photo"
-              :alt="'Profile - ' + name"
-              class="photoProfile"
-            />
+            <img :src="photo" :alt="'Profile - ' + name" class="photoProfile" />
           </div>
           <div class="editDivProfile">
             <span class="editProfile">Edit profile</span>
@@ -18,10 +15,10 @@
         </div>
         <div class="dataProfile">
           <div class="nameDivProfile">
-            <span class="nameProfile">{{name}}</span>
+            <span class="nameProfile">{{ name }}</span>
           </div>
           <div class="usernameDivProfile">
-            <span class="usernameProfile">@{{username}}</span>
+            <span class="usernameProfile">@{{ username }}</span>
           </div>
         </div>
       </div>
@@ -67,28 +64,30 @@
         <p>&copy; DragonQuest 2022. All rights reserved.</p>
       </div>
     </div>
-
+  </div>
 </template>
 
 <script>
 export default {
   name: "SidebarComponent",
-    props: {
+  props: {
     name: String,
     username: String,
     photo: String,
-  },  
+  },
 };
 </script>
 
 <style scoped>
 .sidebar {
-  width: 25%;
   flex-wrap: nowrap;
   border-right: 2px solid #a7adba;
-  height: 100vh;
-  position: sticky;
+  height: 100%;
+}
+
+.sidebar .fixed {
   top: 0px;
+  position: sticky;
 }
 
 .sidebar .logo {
@@ -126,7 +125,6 @@ export default {
 }
 
 .sidebar .profile .imgProfile .photoDivProfile img {
-  object-fit: cover;
   width: 70px;
   height: 70px;
   border-radius: 100%;
@@ -134,7 +132,7 @@ export default {
   border: 1px solid #a7adba;
   object-position: center;
   position: relative;
-}  
+}
 
 .sidebar .profile .imgProfile .editDivProfile .editProfile {
   position: relative;
@@ -158,13 +156,12 @@ export default {
 }
 
 .sidebar .profile .dataProfile .nameDivProfile .nameProfile {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .sidebar .profile .dataProfile .usernameDivProfile .usernameProfile {
-    font-size: 20px;
+  font-size: 20px;
 }
-
 
 .sidebar .profile .dataProfile .usernameDivProfile {
   width: 100%;
@@ -210,5 +207,4 @@ export default {
   height: fit-content;
   padding: 10px 0px;
 }
-
 </style>

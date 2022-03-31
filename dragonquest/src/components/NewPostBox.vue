@@ -12,7 +12,7 @@
           <div class="newPostOptions">
             <div class="newPostImg">
               <div class="imgIcon"><i class="fa-solid fa-photo-film"></i></div>
-              <div class="imgInput">
+              <div class="imgInput" v-if=" 1 != 1">
                 <input
                   type="text"
                   placeholder="Insert image's URL here"

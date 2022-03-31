@@ -28,6 +28,7 @@ export default {
 </script>
 
 <style>
+
 .loginForms {
   margin-left: 15%;
   width: 100%;
