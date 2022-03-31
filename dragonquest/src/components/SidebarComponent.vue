@@ -87,6 +87,8 @@ export default {
   flex-wrap: nowrap;
   border-right: 2px solid #a7adba;
   height: 100vh;
+  position: sticky;
+  top: 0px;
 }
 
 .sidebar .logo {
