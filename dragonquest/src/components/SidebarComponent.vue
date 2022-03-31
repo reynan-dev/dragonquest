@@ -125,8 +125,8 @@ export default {
 
 .sidebar .profile .imgProfile .photoDivProfile img {
   object-fit: cover;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
   position: relative;
   border: 1px solid #a7adba;
@@ -156,11 +156,11 @@ export default {
 }
 
 .sidebar .profile .dataProfile .nameDivProfile .nameProfile {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .sidebar .profile .dataProfile .usernameDivProfile .usernameProfile {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
