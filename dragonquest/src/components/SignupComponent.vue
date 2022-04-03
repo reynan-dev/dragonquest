@@ -1,5 +1,4 @@
 <template>
-	<button @click="test"></button>
 	<div class="loginForms">
 		<form action="">
 			<div class="input">
@@ -81,14 +80,19 @@ const SignupComponent = {
 					setTimeout(this.$router.push, 3000, "/login");
 				} else {
 					this.reveleWrong = true;
+					setTimeout(this.apparition, 3000);
 				}
 			} else {
 				this.reveleWrong = true;
+				setTimeout(this.apparition, 3000);
 			}
+		},
+		apparition() {
+			this.reveleWrong = false;
 		},
 		// verification de l 'address mail
 		verifEmail() {
-			let pattern = /^[a-z0-9.-]{2,}@+[a-z0-9.-]{2,}.+[a-z]{2}$/i;
+			let pattern = /^[a-z0-9.-]{2,}@+[a-z0-9.-]{2,}.+[a-z.-]{2}$/i;
 
 			if (pattern.test(this.user.email)) {
 				return true;
@@ -101,7 +105,7 @@ const SignupComponent = {
 export default SignupComponent;
 </script>
 
-<style>
+<style scoped>
 .loginForms {
 	margin-left: 15%;
 	width: 100%;

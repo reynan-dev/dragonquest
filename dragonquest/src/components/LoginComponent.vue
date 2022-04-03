@@ -18,14 +18,16 @@
 				/>
 			</div>
 			<div class="signTxt">
-				Forgot your password?{{ $store.state.token }}
+				Forgot your password?
 				<a href="#">Click here to recover</a>.
 			</div>
 		</form>
 		<div class="signBtn btn" @click="connexion">Sign in now</div>
 
-		<div class="goodNotify">Success login.</div>
-		<div class="badNotify">Incorrect e-mail or password.</div>
+		<div class="goodNotify" v-show="revele">Success login.</div>
+		<div class="badNotify" v-show="reveleWrong">
+			Incorrect e-mail or password.
+		</div>
 	</div>
 </template>
 
@@ -39,6 +41,8 @@ const LoginComponent = {
 				password: "",
 			},
 			token: "",
+			revele: false,
+			reveleWrong: false,
 		};
 	},
 	methods: {
@@ -54,10 +58,19 @@ const LoginComponent = {
 				}
 			);
 			console.log(promise);
-			let response = await promise.json();
-			console.log(response);
-			this.token = response.token;
-			this.envoieData();
+			if (promise.status === 200) {
+				let response = await promise.json();
+				this.token = response.token;
+				this.revele = true;
+				this.envoieData();
+				setTimeout(this.$router.push, 3000, "/feed");
+			} else {
+				this.reveleWrong = true;
+				setTimeout(this.apparition, 3000);
+			}
+		},
+		apparition() {
+			this.reveleWrong = false;
 		},
 		envoieData() {
 			this.$store.dispatch("envoieDatae", this.token);
@@ -68,7 +81,7 @@ const LoginComponent = {
 export default LoginComponent;
 </script>
 
-<style>
+<style scoped>
 .loginForms {
 	margin-left: 15%;
 	width: 100%;
